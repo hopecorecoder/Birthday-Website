@@ -38,7 +38,9 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     background-color: #FEC6D0;
   }
   
-
+.bouquet{
+  background-image: url(/src/assets/bgImg5.jpg);
+}
 main{
     display:flex;
     justify-content: center;
