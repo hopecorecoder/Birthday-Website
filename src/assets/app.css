@@ -1,0 +1,533 @@
+@font-face {
+    font-family: 'Castro';
+    src: url("/src/assets/castro-script/CastroScript_PERSONAL_USE_ONLY.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  .scrollable-content {
+    overflow: auto; /* Enables scrolling */
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For IE and older Edge */
+  }
+  
+  .scrollable-content::-webkit-scrollbar {
+    display: none; /* For WebKit browsers */
+  }
+  
+  .root{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-y: auto; /* Enable vertical scrolling */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE and older Edge */
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for WebKit browsers */
+}
+
+  body {
+
+    background-color: #FEC6D0;
+  }
+  
+
+main{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:60px;
+    background-image: url("./bgImg.jpeg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width:100vw;
+    height: 100vh;
+  
+}
+.PointerText>h1{
+    font-family: 'Castro';
+    font-size: 60px;
+    
+    font-weight: 600;
+}
+.PointerText{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+main > .PointerText >span{
+    display:flex;
+}
+main > .ImgHolder > img{
+    width: 600px;
+    position: relative;
+}
+main > .PointerText >span> img{
+    width: 300px;
+    height:300px;
+}
+main > .PointerText{
+    display:flex;
+
+}
+main > .PointerText >span> p{
+    font-weight:700 ;
+    font-size: 50px;
+    margin-left:20px;
+    margin-top: 65px;
+    font-family: 'Castro';
+}
+.ImgHolder{
+    cursor: pointer;
+    margin-top: 150px;
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    display: inline-block;
+}
+
+section{
+    background-image: url(./bgImg2.jpg);
+    height :130vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:40px;
+}
+section > p{
+    display :flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+    gap:60px;
+    font-weight: 900;
+
+}
+section > p> .mainSpan{
+    font-size: 60px;
+    align-self: baseline !important; 
+}
+section > p > .questionSpan{
+    font-size: 50px;
+
+} 
+.option-cont{
+    display: flex;
+    flex-direction: column;
+    gap:28px;
+}
+.option {
+    padding : 10px 60px 10px 20px;
+    height: 70px;
+    border: 0;
+    border-radius: 35px;
+    background-color: #FEC6D0;
+    font-weight: 500;
+    font-size: 30px ;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.4s ease;
+    text-align: left;
+    color:#fc4e6d;
+    text-shadow: 1px 3px 5px rgba(252, 110, 134, 0.3);
+    box-shadow: 0 8px 5px rgba(252, 82, 113,0.3);
+    font-family: 'Castro';
+}
+.option:hover{
+    transform-origin: center;
+    transform: scale(1.05);
+    background-color:#fea7b6;
+    box-shadow: 0 10px 7px rgba(252, 82, 113,0.5);
+    text-shadow: 2px 3px 7px rgba(252, 110, 134, 0.5);
+}
+.option-cont > .wrongOption {
+    background-color: #E74C4C;
+    color:#FF6B6B;
+}
+.option-cont > .wrongOption:hover {
+    background-color: #C0392B; /* darker red on hover */
+}
+.reset-btn {
+   
+    padding: 0.6rem 1.2rem;
+    background: linear-gradient(135deg, #ff6b6b, #e74c3c);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(231, 76, 60, 0.4);
+  }
+  
+  .reset-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(231, 76, 60, 0.5);
+  }
+  
+  .reset-btn:active {
+    transform: scale(0.97);
+    box-shadow: 0 2px 6px rgba(231, 76, 60, 0.4);
+  }
+  
+  .reset-btn.hint-btn {
+    background: #FFB6C1;       /* soft light pink */
+    color: #fc4e6d;            /* darker pink for contrast */
+    box-shadow: 0 4px 10px rgba(252, 110, 134, 0.3);
+    margin-bottom: 20px;
+}
+
+canvas {
+    z-index: 9999 !important;
+  }
+
+
+.option.correct-option {
+    background: linear-gradient(135deg, #7dd776, #5bb450); /* lighter to richer green gradient */
+    color: #fff; /* white text for contrast */
+    box-shadow: 0 6px 8px rgba(91, 180, 80, 0.4);
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+    
+}
+
+.option.correct-option:hover {
+    background: linear-gradient(135deg, #5bb450, #489d3b); /* slightly darker on hover */
+    transform: scale(1.05);
+    box-shadow: 0 8px 10px rgba(91, 180, 80, 0.5);
+    text-shadow: 0 2px 3px rgba(255, 255, 255, 0.4);
+}
+
+.option.correct-option:active {
+    transform: scale(0.97);
+    box-shadow: 0 2px 6px rgba(91, 180, 80, 0.4);
+}
+.option:disabled {
+    opacity: 0.6;
+  
+  }
+  
+  .gift-page{
+    height: 100vh;
+    background-image: url(./bgImg3.jpg);
+    background-repeat: no-repeat;
+    background-position: cover;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .gift-page > p{
+    font-family: 'Castro';
+    font-size:64px;
+    font-weight: bold;
+
+  }
+  .gift-page > .gift-container{
+    display:flex;
+    flex-direction: row;
+    gap:64px;
+
+  }
+  .gift-page > .gift-container > .card{
+    background: linear-gradient(135deg, #FFB6C1, #FEC6D0); /* Subtle gradient for a modern look */
+    padding: 40px 60px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05); /* Professional shadow */
+    border-radius: 20px; /* Softer corners */
+    cursor: pointer;
+    min-height: 300px;
+    min-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Castro';
+    font-size: 24px;
+    color: #333; /* Neutral text color */
+}
+
+.gift-page > .gift-container > .card:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+    transition-duration: 0.4s ;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
+}
+
+.gift-page > .gift-container > .card:active {
+    transform: translateY(-5px); /* Slightly lower lift on click */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.05); /* Softer shadow on click */
+}
+.gift-page > .gift-container > .card> img{
+    width: 300px;
+    height:300px;
+}
+.puzzle-el {
+    background-image: url("./bgImg4.jpg"); /* use public folder or import in JS */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%; /* stretches width and height to cover container */
+    width: 100vw;
+    height: 100vh;
+    margin-top: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  
+.puzzle-el > p{
+    text-align: center;
+    font-size: 64px;
+    font-weight: bolder;
+    font-family: "Castro";
+    justify-self: flex-start;
+    margin-bottom: 550px;
+}
+.bouquet{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+}
+
+
+.home-btn {
+    padding: 0.8rem 1.6rem;
+    background: linear-gradient(135deg, #FFB6C1, #FEC6D0); /* Soft pink gradient */
+    border: none;
+    border-radius: 12px;
+    color: #fc4e6d; /* Darker pink for contrast */
+    font-family: 'Castro';
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 12px rgba(252, 110, 134, 0.3); /* Subtle shadow */
+    text-shadow: 1px 2px 4px rgba(252, 110, 134, 0.4); /* Text shadow for depth */
+    position: fixed;
+    bottom:20px;
+    left: 20px;
+    z-index:2000;
+}
+
+.home-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #fea7b6, #fc9bb7); /* Slightly darker gradient on hover */
+    box-shadow: 0 8px 16px rgba(252, 110, 134, 0.5); /* Enhanced shadow on hover */
+}
+
+.home-btn:active {
+    transform: scale(0.97);
+    box-shadow: 0 4px 8px rgba(252, 110, 134, 0.3); /* Softer shadow on click */
+}
+
+.home-btn:focus {
+    outline: 2px solid #fc4e6d; /* Focus outline for accessibility */
+    outline-offset: 4px;
+}
+.img-cont {
+    margin:  40px 120px ;
+    margin-right: 800px;
+    display: grid;
+    height:80vh;
+    grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+    gap: 20px; /* Spacing between grid items */
+    justify-items: center; /* Center items horizontally */
+    align-items: start; /* Align items at the start of each row */
+
+}
+
+.bouquet {
+    display: flex; /* Use Flexbox */
+
+    text-align: center;
+    height: 100vh; /* Ensure it takes the full height of the screen */
+    padding-right: 20px; /* Optional: Add some spacing from the right edge */
+}
+  
+
+.flower-img {
+  position: fixed;
+  width: 90px;
+  height: 120px;
+  cursor: grab;
+  user-select: none;
+ 
+  transition: transform 0.12s ease;
+  will-change: left, top, transform;
+  z-index: 10;
+}
+
+.flower-img.dragging {
+  cursor: grabbing;
+  transform: none; /* keep stable while dragging */
+  z-index: 1000;
+  /* avoid pointer-events: none here — we need mouseup to register on window */
+}
+
+/* optional visual feedback on click */
+.flower-img:active {
+  transform: scale(1.05);
+}
+  .bouquet-img {
+    display: block;
+    margin: 10px 75px 10px 800px ;
+    height: 600px;
+    width: 550px;
+    position: absolute;
+  }
+  .puzzleImg{
+    width: 150px;
+    border-radius: 20px;
+    
+  }
+  .note-cont {
+    position: fixed;
+    width: 360px;            /* adjust to match your background artwork */
+    height: 480px;           /* adjust to match your background artwork */
+    margin: 150px 320px 700px 200px; /* keep or move positioning elsewhere */
+    background: url("/src/assets/ripped-paper.png") no-repeat center;
+    background-size: contain;
+    box-sizing: border-box;  /* ensures padding is inside width/height */
+    padding: 28px;           /* inner padding so text doesn't touch edges */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;        /* clip overflow; use auto if you want scroll */
+  }
+  
+  /* the paragraph will exactly fill the content area */
+  .note-cont p {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;          /* allow scrolling if content too large */
+    word-break: break-word;
+    white-space: pre-wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Castro", sans-serif;
+    font-size: clamp(16px, 3.4vw, 48px); /* responsive font sizing */
+    line-height: 1.05;
+    padding: 0;
+  }
+  
+  
+  /* ensure a positioned ancestor */
+.photobooth{ display: flex; flex-direction:column ; justify-content:left; align-items: center; background-image: url(./bgImg3.jpg); width: 100vw; height: 100vh; background-repeat: no-repeat; background-position: center; background-size: contain; } /* ...existing code... */ .print-btn { margin-top: 60px; padding: 0.8rem 1.4rem; background: linear-gradient(135deg, #FFB6C1 0%, #FEC6D0 100%); color: #fc4e6d; border: none; border-radius: 12px; font-family: 'Castro'; font-weight: 700; font-size: 1rem; cursor: pointer; box-shadow: 0 8px 18px rgba(252, 110, 134, 0.22); transition: transform 0.16s ease, box-shadow 0.16s ease, opacity 0.12s ease; user-select: none; -webkit-tap-highlight-color: transparent; } .print-btn:hover { transform: translateY(-3px); box-shadow: 0 14px 28px rgba(252, 110, 134, 0.28); background: linear-gradient(135deg, #fea7b6 0%, #fc9bb7 100%); } .print-btn:active { transform: translateY(0); box-shadow: 0 6px 12px rgba(252, 110, 134, 0.18); opacity: 0.96; } .print-btn:focus { outline: 3px solid rgba(252,78,109,0.12); outline-offset: 4px; } /* small screens */ @media (max-width: 520px) { .print-btn { padding: 0.6rem 1rem; font-size: 0.95rem; border-radius: 10px; } } /* ...existing code... */ .main-booth{ display: flex; align-items: center; /* vertically center cogs and printer */ justify-content: center; /* center the trio horizontally */ gap: 12px; /* small gap; adjust as needed */ position: relative; padding: 40px 0; } /* printer (thin black bar) */ .printer{ width: 250px; height: 10px; /* requested height 40px */ background-color: black; /* black color */ border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); } .cog-right{ width:200px; height: 200px; z-index: 999; margin-left: -80px; } .cog-left{ width: 150px; height: 150px; margin-right: -60px; z-index: 999; } /* Reuse existing .cog styles */ .cog { transition: transform 0.3s ease; } /* Cog rotation pattern: 180° rotate → pause → repeat 4 times */ @keyframes spinStep { 0% { transform: rotate(0deg); } 20% { transform: rotate(180deg); } /* rotate over 1s */ 25% { transform: rotate(180deg); } /* pause 0.25s */ 45% { transform: rotate(360deg); } /* rotate next 180° */ 50% { transform: rotate(360deg); } /* pause 0.25s */ 70% { transform: rotate(540deg); } 75% { transform: rotate(540deg); } 95% { transform: rotate(720deg); } /* final half rotation */ 100% { transform: rotate(720deg); } /* pause end */ } .rotate { animation: spinStep 5s linear forwards; } /* COG ANIMATION */ .cog { transition: transform 0.3s ease; } @keyframes spinStep { 0% { transform: rotate(0deg); } 20% { transform: rotate(180deg); } 25% { transform: rotate(180deg); } 45% { transform: rotate(360deg); } 50% { transform: rotate(360deg); } 70% { transform: rotate(540deg); } 75% { transform: rotate(540deg); } 95% { transform: rotate(720deg); } 100% { transform: rotate(720deg); } } .rotate { animation: spinStep 5s linear forwards; } /* Optional realism: cogs opposite direction */ .cog-right.rotate { animation-direction: reverse; } /* PRINTER AND PHOTO ANIMATION */ .printer { width: 250px; height: 10px; background-color: black; border-radius: 4px; position: relative; overflow: hidden; /* hide photo before printing */ } /* the photo being printed */ .photo-out { position: absolute; top: 0; left: 0; width: 250px; transform: translateY(-100%); /* fully hidden initially */ transition: none; } .photo-out { position: absolute; top: -300px; /* start fully hidden above printer */ left: 0; width: 250px; } .printing { animation: printStep 5s linear forwards; } @keyframes printStep { 0% { transform: translateY(-100%); } 20% { transform: translateY(-75%); } /* reveal 25% */ 25% { transform: translateY(-75%); } /* pause */ 45% { transform: translateY(-50%); } /* next 25% */ 50% { transform: translateY(-50%); } /* pause */ 70% { transform: translateY(-25%); } 75% { transform: translateY(-25%); } 95% { transform: translateY(0%); } /* fully revealed */ 100% { transform: translateY(0%); } /* pause end */ } .printing { animation: printStep 5s linear forwards; }
+/* PRINTER DIV stays the same */
+.main-booth{
+  margin-top: -175px;
+}
+.print-btn{
+  margin-left: 860px;;
+}
+.photo-out{
+  margin-left: 110px;;
+}
+.puzzle-el > p{
+  margin-top: 0px;
+}
+.close-letter {
+  width: 600px;
+  height: 600px;
+  position: fixed;
+  cursor: pointer;
+}
+
+.button-letter {
+  z-index: 2;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  margin-top: 60px;
+  cursor: pointer;
+}
+
+.open-letter {
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  cursor: pointer;
+}
+
+/* Animation div */
+.animation-letter {
+  width: 200px;
+  height: 300px;
+  position: fixed;
+  top: 50%; /* Start from open-letter approx */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: whitesmoke;
+  animation: letterPop 0.75s forwards;
+  z-index: 10;
+}
+
+/* Keyframes for move up then grow */
+@keyframes letterPop {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  66% {
+    transform: translate(-50%, -190px) scale(1.2);
+  }
+  100% {
+    transform: translate(-50%, -130px) scale(1.4);
+  }
+}
+
+/* Message overlay */
+/* Message overlay wrapper */
+.message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* darken rest of screen */
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Message content box */
+.message p {
+  width: 80vw;
+  height: 80vh;
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  text-align: center;
+  
+}
+.message > p{
+  display:flex;
+  flex-direction: column;
+  gap:32px;
+  font-family: "Dancing Script";
+  font-size: 48px;
+}
