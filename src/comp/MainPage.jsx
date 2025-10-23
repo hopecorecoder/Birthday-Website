@@ -1,5 +1,7 @@
 import imgPath from "/src/assets/candle.png"
 import React from "react"
+import cakeImg from "/src/assets/Cake-removebg-preview.png"
+import arrowImg from "/src/assets/arrow.png"
 export default function MainPage(   { candle, setCandle }   ) {
     let [candles, setCandles] = React.useState([])
 
@@ -36,12 +38,12 @@ export default function MainPage(   { candle, setCandle }   ) {
             <div className="PointerText" >
                 <span>
                     <p> Click on the cake. </p>
-                    <img src="/src/assets/arrow.png" alt="Pointer png"></img>
+                    <img src={arrowImg} alt="Pointer png"></img>
                 </span>
                 <h1>Your Age {candle}</h1>
             </div>
             <div className="ImgHolder" onClick={handleCandle}>
-                <img src="/src/assets/Cake-removebg-preview.png"  alt="cake png"/>
+                <img src={cakeImg} alt="cake png"/>
                 {renderCandle()}
             </div>
         </main>

@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import React from "react";
 import imagePath from "/src/assets/flower.png";
-
+import eBouquet from "/src/assets/empty_bouquet.png"
+import ripPaper from "/src/assets/ripped-paper.png"
 export default function Bouquet() {
   const navigate = useNavigate();
   const count = 10;
@@ -175,14 +176,14 @@ function toggleShowNote(i){
           );
         })}
       </div>
-        <div className="note-cont" style={{backgroundImage : `url(/src/assets/ripped-paper.png)`}}>
+        <div className="note-cont" style={{backgroundImage : `url(${ripPaper})`}}>
           {note.map(note => (
             note.showNote? <p style={{ fontFamily : "Castro", fontSize:"48px", marginBottom:"30px" }}>{note.cont}</p> :null
           ))}
         </div>
       <img
         className="bouquet-img"
-        src="/src/assets/empty_bouquet.png"
+        src={eBouquet}
         alt="empty bouquet"
       />
     </article>

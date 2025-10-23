@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import React from "react";
-
+import letterClose from "/src/assets/letter-close.png"
+import letterOpen from "/src/assets/letter-open.png"
+import letterButton from "/src/assets/letter-button.png"
 export default function Puzzle() {
   const navigate = useNavigate();
   const [openLetter, setOpenLetter] = React.useState(false);
@@ -27,12 +29,12 @@ export default function Puzzle() {
       {!openLetter && (
         <>
           <img
-            src="/src/assets/letter-close.png"
+            src={letterClose}
             className="close-letter"
             onClick={openEnvolope}
           />
           <img
-            src="/src/assets/letter-button.png"
+            src={letterButton}
             className="button-letter"
             onClick={openEnvolope}
           />
@@ -40,7 +42,7 @@ export default function Puzzle() {
       )}
       {openLetter && (
         <img
-          src="/src/assets/letter-open.png"
+          src={letterOpen}
           className="open-letter"
           onClick={openMessage}
         />
